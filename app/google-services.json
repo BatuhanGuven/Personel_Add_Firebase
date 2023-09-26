@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "880917478987",
+    "project_id": "personel-kaydet-b5bea",
+    "storage_bucket": "personel-kaydet-b5bea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880917478987:android:7dd1ff7209168436dc17ce",
+        "android_client_info": {
+          "package_name": "com.example.firebase_personelkaydet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1z0hVGe3mI97NCK4iIkgiBhav8yHav_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
