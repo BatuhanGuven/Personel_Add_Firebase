@@ -3,18 +3,37 @@ package com.example.firebase_personelkaydet
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
+import androidx.compose.material3.MaterialTheme
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.firebase_personelkaydet.ui.theme.DarkColorScheme
+import com.example.firebase_personelkaydet.ui.theme.LightColorScheme
 
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val myViewModel = myViewModel()
-        setContent {
-            MainScreen(myViewModel)
+        val myViewModel = MyViewModel()
+
+        installSplashScreen().apply {
+            setKeepOnScreenCondition {
+                myViewModel.isLoading.value
+            }
         }
+
+        setContent {
+            MaterialTheme(
+                colorScheme =
+                if (myViewModel.isDark.value){
+                    DarkColorScheme
+                }else{
+                    LightColorScheme
+                }
+            ) {
+                MainScreen(myViewModel)
+            }
+
+        }
+
+
     }
 }
 
